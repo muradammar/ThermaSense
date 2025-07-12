@@ -11,9 +11,9 @@ The main purpose of this project was to learn the fundamentals of FreeRTOS, a lo
 The arduino was programmed using FreeRTOS. The function of reading from the sensor and sending the data to the Pi were created as 
 "tasks". FreeRTOS can give the illusion of concurrent execution of functions even with a single core CPU by switching quickly between tasks.
 Furthemore, to safely communicate between tasks, a "queue" was used. This API ensures a task never writes to an overloaded data buffer or a task
-never reads from an empty buffer. 
+never reads from an empty buffer. Together, these APIs allowed me to separate the tasks of reading from the sensor and writing to the Pi and allowed them to communicate and exist simultaneously.  
 
-I also learnt that there are many nuances to RTOS. Some parts of tasks cannot be interrupted so you must carefully block interrupts
+I learnt that there are many nuances to RTOS. Some parts of tasks cannot be interrupted so you must carefully block interrupts
 during critical sections whilst not undermining the function of the kernel. I also learnt that shared resources between tasks bring about
 undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely share these resources
 
