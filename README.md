@@ -19,3 +19,4 @@ undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely shar
 
 ***TO-DO****
 
+![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Screenshot%202025-07-12%20191009.png)
