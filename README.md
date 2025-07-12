@@ -3,6 +3,8 @@
 This is a temperature and humidity sensor system consisting of two microcontrollers (Arduino and Raspberry Pi) that communicate via UART and display data on a simple GUI. 
 The simple interaction diagram below summarizes the behaviour of the system. 
 
+![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Screenshot%202025-07-12%20191009.png)
+
 ## FreeRTOS
 
 The main purpose of this project was to learn the fundamentals of FreeRTOS, a low level operating systems for real-time systems.
@@ -17,6 +19,6 @@ undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely shar
 
 ## File Structure
 
-***TO-DO****
 
-![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Screenshot%202025-07-12%20191009.png)
+
+
