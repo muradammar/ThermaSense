@@ -6,8 +6,10 @@
 #define PRIORITY_SENSOR_READ 2
 #define PRIORITY_UART_TRANSMIT 1
 
+//init sensor
 SimpleDHT11 temp_sensor;
 
+//use this struct as the message format for the queue
 typedef struct {
   byte temperature;
   byte humidity;
@@ -18,6 +20,7 @@ QueueHandle_t xQueue_one;
 void print_uart_task(void *params) {
   SensorData sensor_data;
   while (1) {
+    //transmit data if received
     if (xQueueReceive(xQueue_one, &sensor_data, pdMS_TO_TICKS(200)) == pdTRUE) {
       Serial.print("Humidity: ");
       Serial.print(sensor_data.humidity);
@@ -34,6 +37,8 @@ void print_uart_task(void *params) {
 void read_sensor_task(void *params) {
   SensorData data;
   while (1) {
+
+    //read sensor and send to queue
     int error = temp_sensor.read(DHT_PIN, &data.temperature, &data.humidity, NULL);
     if (error == SimpleDHTErrSuccess) {
       xQueueSend(xQueue_one, &data, 0);
@@ -48,7 +53,7 @@ void read_sensor_task(void *params) {
 void setup() {
   Serial.begin(9600);
   while( !Serial );
-  delay(100);  // Let Serial init
+  delay(100); 
 
   xQueue_one = xQueueCreate(5, sizeof(SensorData));
   if (xQueue_one == NULL) {
@@ -63,5 +68,5 @@ void setup() {
 }
 
 void loop() {
-  // FreeRTOS handles everything
+  
 }
