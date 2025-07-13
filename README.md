@@ -3,7 +3,7 @@
 This is a temperature and humidity sensor system consisting of two microcontrollers (Arduino and Raspberry Pi) that communicate via UART and display data on a simple GUI. The arduino is programmed using RTOS to manage sensor reads and UART communication. The Pi is programmed using a simply python script and the built in Serial and Tkinter libs. 
 The simple interaction diagram below summarizes the behaviour of the system. 
 
-![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Screenshot%202025-07-12%20191009.png)
+![Alt text](https://github.com/muradammar/ThermaSense/raw/main/images/Screenshot%202025-07-12%20191009.png)
 
 ## FreeRTOS
 
