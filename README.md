@@ -19,14 +19,20 @@ undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely shar
 
 ## File Structure
 
-## Lessons Learnt
+## Lessons Learnt & Future Steps
 
 This project involved a few deadends and improvisations. Originally, I was going to create a nicer GUI using PyQT6. However, installing that library broke my SD card so I opted for Tkinter instead. Furthermore, the first version of the arduino code uses no sensor library. I read from the sensor using bare metal programming and bit-banging (see temp_sensor_fail.ino). It was immediately clear that my timing was not as precise as it should be and I was reading garbage values from the sensor. The task was also failing to read from the sensor more than half the time:
 
 ![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Image%20(6).jpg)
 
-After this, I decided to use an existing library. I started with the Adafruit library which turns out not to work with FreeRTOS. Then I found the "SimpleDHT" library which performed well. 
+After this, I decided to use an existing library. I started with the Adafruit library which turns out not to work with FreeRTOS. Then I found the "SimpleDHT" library which performed well. Here's the working output. Too flashy... I know
 
+![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Image%20(7).jpg)
 
+And here's the physical system:
+
+![Alt text](https://github.com/muradammar/ThermaSense/blob/main/images/Image%20(8).jpg)
+
+Given the more time and iterations, I would like to implement a nicer and more customizable GUI into this system. Furthemore, I'd like to formally share resources on the Arduino such as access to serial using mutexes and semaphores. And a much more interesting aspect to this project would be to connect the Pi to multiple sensors and learn how to manage communication form various devices. In this case I would switch to an SPI (full duplex) or maybe I2C protocol (only half duplex). 
 
 
