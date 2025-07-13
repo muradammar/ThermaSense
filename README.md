@@ -19,6 +19,20 @@ undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely shar
 
 ## File Structure
 
+ThermaSense/
+│
+├── temp_monitor.ino           # Arduino code using FreeRTOS
+├── temp_sensor_fail.ino       # Initial bare-metal attempt at sensor reading
+├── uart_gui.py                # Python script for Raspberry Pi GUI and UART
+├── README.md                  # Project documentation
+│
+└── images/                    # Screenshots and system photos
+    ├── Screenshot 2025-07-12 191009.png
+    ├── Image (6).jpg          # Output from early failed attempt
+    ├── Image (7).jpg          # Output from working version
+    └── Image (8).jpg          # Physical system photo
+
+
 ## Lessons Learnt & Future Steps
 
 This project involved a few deadends and improvisations. Originally, I was going to create a nicer GUI using PyQT6. However, installing that library broke my SD card so I opted for Tkinter instead. Furthermore, the first version of the arduino code uses no sensor library. I read from the sensor using bare metal programming and bit-banging (see temp_sensor_fail.ino). It was immediately clear that my timing was not as precise as it should be and I was reading garbage values from the sensor. The task was also failing to read from the sensor more than half the time:
