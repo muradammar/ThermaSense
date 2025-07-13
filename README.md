@@ -23,7 +23,7 @@ undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely shar
 
 This project involved a few deadends and improvisations. Originally, I was going to create a nicer GUI using PyQT6. However, installing that library broke my SD card so I opted for Tkinter instead. Furthermore, the first version of the arduino code uses no sensor library. I read from the sensor using bare metal programming and bit-banging (see temp_sensor_fail.ino). It was immediately clear that my timing was not as precise as it should be and I was reading garbage values from the sensor. The task was also failing to read from the sensor more than half the time:
 
-![Alt text] (https://github.com/muradammar/ThermaSense/blob/main/images/Image%20(6).jpg)
+![Alt text] (https://github.com/muradammar/ThermaSense/raw/main/images/Image%20(6).jpg)
 
 After this, I decided to use an existing library. I started with the Adafruit library which turns out not to work with FreeRTOS. Then I found the "SimpleDHT" library which performed well. 
 
