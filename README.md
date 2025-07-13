@@ -18,7 +18,7 @@ during critical sections whilst not undermining the function of the kernel. I al
 undefined behaviour. I'd like to learn "mutexes" and "semaphores" to safely share these resources
 
 ## File Structure
-
+```
 ThermaSense/
 │
 ├── temp_monitor.ino           # Arduino code using FreeRTOS
@@ -31,7 +31,7 @@ ThermaSense/
     ├── Image (6).jpg          # Output from early failed attempt
     ├── Image (7).jpg          # Output from working version
     └── Image (8).jpg          # Physical system photo
-
+```
 
 ## Lessons Learnt & Future Steps
 
