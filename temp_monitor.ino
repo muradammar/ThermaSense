@@ -3,6 +3,9 @@
 #include <SimpleDHT.h>
 
 #define DHT_PIN 3
+
+//higher num == higher priority
+//read_sensor task is timing-sensitive
 #define PRIORITY_SENSOR_READ 2
 #define PRIORITY_UART_TRANSMIT 1
 
